@@ -359,6 +359,7 @@
 /system/bin/ipsecstarter       u:object_r:ipsecstarter_exec:s0
 /system/bin/irrcServer      u:object_r:irrcServer_exec:s0
 /system/bin/iwland          u:object_r:iwland_exec:s0
+/system/bin/latd          u:object_r:latd_exec:s0
 /system/bin/lg_dm_router   u:object_r:lg_dm_router_exec:s0
 /system/bin/lg_odm_service   u:object_r:lg_odm_service_exec:s0
 /system/bin/lgdrmserver					u:object_r:lgdrmserver_exec:s0

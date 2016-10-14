@@ -117,6 +117,7 @@ ctl.ble_sniff_scan     u:object_r:ble_sniff_prop:s0
 ctl.vm_bms             u:object_r:vm_bms_prop:s0
 ctl.ddual_main         u:object_r:minios_prop:s0
 ctl.display_server     u:object_r:minios_prop:s0
+ctl.latd               u:object_r:minios_prop:s0
 ctl.p2p_supplicant     u:object_r:minios_prop:s0
 ctl.Mfts_led_disp      u:object_r:minios_prop:s0
 ctl.Mfts_main          u:object_r:minios_prop:s0
