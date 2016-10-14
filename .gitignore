@@ -84,6 +84,11 @@ GTAGS
 *~
 \#*#
 
+simplegx_modules
+*.img
+*.tgz
+tuxera-*
+
 #
 # Leavings from module signing
 #
