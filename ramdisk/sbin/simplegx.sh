@@ -27,13 +27,6 @@ $BB chmod 06755 /system/xbin/busybox
 # ---------------
 # Initialize root
 # ---------------
-if [ -e /system/xbin/su ]; then
-	$BB chmod 06755 /system/xbin/su;
-fi;
-if [ -e /system/xbin/daemonsu ]; then
-	$BB chmod 06755 /system/xbin/daemonsu;
-fi;
-
 /system/xbin/daemonsu --auto-daemon &
 
 
