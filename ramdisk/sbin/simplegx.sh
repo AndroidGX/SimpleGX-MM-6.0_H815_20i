@@ -17,6 +17,16 @@ $BB rm -rf /data/lost+found/* 2> /dev/null;
 $BB rm -rf /data/tombstones/* 2> /dev/null;
 
 
+# -------------------------------------
+# Stop LG logging to /data/logger/$FILE
+# -------------------------------------
+setprop persist.service.events.enable 0
+setprop persist.service.main.enable 0
+setprop persist.service.power.enable 0
+setprop persist.service.radio.enable 0
+setprop persist.service.system.enable 0
+
+
 # ------------------
 # Initialize BusyBox
 # ------------------
@@ -43,7 +53,6 @@ $BB run-parts /system/etc/init.d/
 # ------------------------------------------
 # Stop google service and restart it on boot
 # ------------------------------------------
-
 if [ "$($BB pidof com.google.android.gms | wc -l)" -eq "1" ]; then
 	$BB kill "$($BB pidof com.google.android.gms)";
 fi;
@@ -61,7 +70,6 @@ fi;
 # ---------------------------------------------------
 # Google Services battery drain fixer by Alcolawl@xda
 # ---------------------------------------------------
-
 pm enable com.google.android.gms/.update.SystemUpdateActivity
 pm enable com.google.android.gms/.update.SystemUpdateService
 pm enable com.google.android.gms/.update.SystemUpdateService$ActiveReceiver
@@ -72,6 +80,14 @@ pm enable com.google.android.gsf/.update.SystemUpdatePanoActivity
 pm enable com.google.android.gsf/.update.SystemUpdateService
 pm enable com.google.android.gsf/.update.SystemUpdateService$Receiver
 pm enable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
+
+
+# -----------------
+# End of the script
+# -----------------
+rm /data/local/tmp/SimpleGX_KERNEL
+touch /data/local/tmp/SimpleGX_KERNEL
+echo "SimpleGX KERNEL, ready to pwn !" > /data/local/tmp/SimpleGX_KERNEL;
 
 
 $BB mount -t rootfs -o remount,ro rootfs
