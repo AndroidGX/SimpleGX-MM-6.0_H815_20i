@@ -2,10 +2,8 @@
 # SimpleGX KERNEL init script
 
 
-BB=/sbin/busybox
-
+export BB=/sbin/busybox
 $BB mount -t rootfs -o remount,rw rootfs
-
 sync
 
 
